@@ -13,5 +13,5 @@ geojson.io is a quick, simple tool for creating, viewing, and sharing maps. geoj
 Privacy & License Issues
 ========================
 
-The code to shoot your layers to geojson.io is released under various open source licenses (see LICENSE file in plugin source directory), but that doesn't mean your data has to be public or open source. Once you've shot your data to geojson.io, clicking save by default saves to a private GitHub Gist -- so it will only be accessible to people you share the URL with, and creating it won't appear in your GitHub timeline.
+The code to shoot your layers to geojson.io is released under various open source licenses (see COPYRIGHT file in plugin source directory), but that doesn't mean your data has to be public or open source. Once you've shot your data to geojson.io, clicking save by default saves to a private GitHub Gist -- so it will only be accessible to people you share the URL with, and creating it won't appear in your GitHub timeline.
 The data you create and modify in geojson.io doesn't acquire any additional license: if it's secret and copyrighted, it will remain that way.
