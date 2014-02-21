@@ -23,6 +23,15 @@ geojson.io is a quick, simple tool for creating, viewing, and sharing maps. geoj
 .. index:: licensing
 .. index:: License; Privacy; Issues
 
+Dependencies
+============
+
+None really, though if you have the **github3.py** python library, it will use that.
+
+    pip install github3.py
+
+Other than that, this tool assumes you have a pretty standard Python install with json, urllib2, and some other things that most people already have.
+
 Privacy & License Issues
 ========================
 

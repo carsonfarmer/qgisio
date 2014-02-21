@@ -10,6 +10,17 @@ What *is* geojson.io?
 
 geojson.io is a quick, simple tool for creating, viewing, and sharing maps. geojson.io is named after [GeoJSON](http://geojson.org/), an open source data format, and it supports GeoJSON in all ways -- but also accepts KML, GPX, CSV, TopoJSON, and other formats. Checkout the [geojson.io ?Help](http://geojson.io/) for more details. Central to geojson.io is GitHub and Gists. A Gist is a simple way to share snippets and pastes with others (including snippets of data!). All gists are Git repositories, so they are automatically versioned, forkable and usable from Git. If you don't know what Git is, then [head here](http://git-scm.com/) and find out!
 
+Dependencies
+============
+
+None really, though if you have the **github3.py** python library, it will use that.
+
+```
+pip install github3.py
+```
+
+Other than that, this tool assumes you have a pretty standard Python install with json, urllib2, and some other things that most people already have.
+
 Privacy & License Issues
 ========================
 
