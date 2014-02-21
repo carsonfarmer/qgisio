@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/plugins/qgisio" >
+        <file>icon.png</file>
+		<file>help.png</file>
+    </qresource>
+</RCC>
