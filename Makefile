@@ -24,10 +24,7 @@ QGISDIR=.qgis2
 
 # Makefile for a PyQGIS plugin
 
-# translation
 SOURCES = qgisio.py ui_qgisio.py __init__.py qgisiodialog.py
-#TRANSLATIONS = i18n/qgisio_en.ts
-TRANSLATIONS =
 
 # global
 
@@ -35,7 +32,7 @@ PLUGINNAME = qgisio
 
 PY_FILES = qgisio.py __init__.py geojsonio.py
 
-EXTRAS = icon.png metadata.txt help.png
+EXTRAS = icon.png metadata.txt help.png COPYRIGHT LICENSE
 
 RESOURCE_FILES = resources_rc.py 
 
@@ -57,16 +54,15 @@ compile: $(UI_FILES) $(RESOURCE_FILES)
 # The deploy  target only works on unix like operating system where
 # the Python plugin directory is located at:
 # $HOME/$(QGISDIR)/python/plugins
-deploy: compile doc transcompile
+deploy: compile doc
 	mkdir -p $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vf $(PY_FILES) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vf $(RESOURCE_FILES) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vf $(EXTRAS) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
-	cp -vfr i18n $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)
 	cp -vfr $(HELP) $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME)/help
 
 # The dclean target removes compiled python files from plugin directory
-# also delets any .svn entry
+# also deletes any .svn entry
 dclean:
 	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME) -iname "*.pyc" -delete
 	find $(HOME)/$(QGISDIR)/python/plugins/$(PLUGINNAME) -iname ".svn" -prune -exec rm -Rf {} \;
@@ -93,20 +89,6 @@ package: compile
 
 upload: zip
 	$(PLUGIN_UPLOAD) $(PLUGINNAME).zip
-
-# transup
-# update .ts translation files
-transup:
-	pylupdate4 Makefile
-
-# transcompile
-# compile translation files into .qm binary format
-transcompile: $(TRANSLATIONS:.ts=.qm)
-
-# transclean
-# deletes all .qm files
-transclean:
-	rm -f i18n/*.qm
 
 clean:
 	rm $(UI_FILES) $(RESOURCE_FILES)
