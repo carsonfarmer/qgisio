@@ -34,3 +34,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Zip files (for packaging)
+*.zip
